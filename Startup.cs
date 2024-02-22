@@ -17,6 +17,7 @@ namespace SignalRServerExample
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options => options.AddDefaultPolicy(policy => policy.AllowCredentials().AllowAnyHeader().AllowAnyMethod().SetIsOriginAllowed(x => true)));
             services.AddSignalR();
         }
 
@@ -27,7 +28,7 @@ namespace SignalRServerExample
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

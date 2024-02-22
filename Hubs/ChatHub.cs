@@ -7,6 +7,6 @@ namespace SignalRServerExample.Hubs
 {
     public class ChatHub:Hub
     {
-
+        public async Task
     }
 }
