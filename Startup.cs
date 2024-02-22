@@ -32,7 +32,7 @@ namespace SignalRServerExample
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapHub<MyHub>("/myhub");
+                endpoints.MapHub<ChatHub>("/chathub");
             });
         }
     }
